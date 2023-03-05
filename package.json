@@ -7,7 +7,7 @@
     "start": "node backend/server.js",
     "dev": "concurrently \"nodemon backend/server.js\" \"cd frontend && npm run dev \"",
     "test": "concurrently \"node backend/server.js\" \"cd frontend && npm run dev \"",
-    "build": "npm install && concurrently \"cd frontend && npm install && npm run build \""
+    "build": "npm install && cd frontend && npm install && npm run build"
   },
   "keywords": [],
   "author": "Pope",
