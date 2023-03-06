@@ -71,11 +71,12 @@ const Deposit = ({ revalidate, setRevalidate }) => {
           {deposits?.map((dep) => (
             <Tr key={dep._id}>
               <Td color={"gray.400"}>
-                {dep?.createdAt.toLocaleString("ro-RO", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
+                {dep &&
+                  new Date(dep.createdAt).toLocaleString("ro-RO", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
               </Td>
               <Td>{dep.amount} LEI</Td>
               <Td textAlign={"right"}>

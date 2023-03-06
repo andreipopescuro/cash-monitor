@@ -66,11 +66,12 @@ const Withdraw = ({ revalidate, setRevalidate }) => {
           {withdraws?.map((withdraw) => (
             <Tr key={withdraw._id}>
               <Td color={"gray.400"}>
-                {withdraw?.createdAt.toLocaleString("ro-RO", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
+                {withdraw &&
+                  new Date(withdraw.createdAt).toLocaleString("ro-RO", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
               </Td>
               <Td>{withdraw.amount} LEI</Td>
               <Td textAlign={"right"}>
