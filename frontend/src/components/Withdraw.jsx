@@ -10,7 +10,7 @@ import {
   Tr,
   useToast,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import { AppState } from "../Context/ContextProvider";
 import { axiosRequest } from "../lib/axiosReq";
 
@@ -65,7 +65,13 @@ const Withdraw = ({ revalidate, setRevalidate }) => {
         <Tbody>
           {withdraws?.map((withdraw) => (
             <Tr key={withdraw._id}>
-              <Td color={"gray.400"}>{withdraw?.createdAt}</Td>
+              <Td color={"gray.400"}>
+                {withdraw?.createdAt.toLocaleString("ro-RO", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </Td>
               <Td>{withdraw.amount} LEI</Td>
               <Td textAlign={"right"}>
                 <Button

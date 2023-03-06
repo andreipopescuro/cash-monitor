@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Table,
   TableContainer,
@@ -69,25 +70,12 @@ const Deposit = ({ revalidate, setRevalidate }) => {
         <Tbody>
           {deposits?.map((dep) => (
             <Tr key={dep._id}>
-              <Td
-                color={"gray.400"}
-                display="flex"
-                flexDirection="column"
-                textAlign="center"
-              >
-                <Box>
-                  {dep?.createdAt.toLocaleString("ro-RO", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </Box>
-                <Box>
-                  {dep?.createdAt.toLocaleString("ro-RO", {
-                    hour: "numeric",
-                    minute: "numeric",
-                  })}
-                </Box>
+              <Td color={"gray.400"}>
+                {dep?.createdAt.toLocaleString("ro-RO", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
               </Td>
               <Td>{dep.amount} LEI</Td>
               <Td textAlign={"right"}>
